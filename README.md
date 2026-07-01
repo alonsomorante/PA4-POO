@@ -26,4 +26,4 @@ java -cp out tienda.principal.Main
 
 ## Video explicativo
 
-[Ver video en YouTube](URL_DEL_VIDEO)
+[Ver video en YouTube](https://youtu.be/fZkivKCKG-I)
