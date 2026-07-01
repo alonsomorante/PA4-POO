@@ -95,6 +95,13 @@
             font-size: 1.5em;
         }
 
+        .section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
         .meta {
             color: #7f8c8d;
             font-size: 0.95em;
@@ -167,6 +174,27 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.95em;
+        }
+
+        .decision-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .decision-list li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            padding-top: 2px;
+        }
+
+        .decision-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #9b59b6;
+            font-weight: bold;
+            font-size: 1.4em;
         }
 
         footer {
@@ -254,28 +282,25 @@
         <div class="section">
             <div class="section-header">
                 <span class="badge badge-part3">PARTE 3</span>
-                <h2>Demostración en consola y despedida</h2>
+                <h2>Decisiones técnicas y justificación de la solución</h2>
             </div>
-            <p class="meta">Duración: 2 a 3 minutos | Integrante 3</p>
+            <p class="meta">Duración: 1.5 a 2 minutos | Integrante 3</p>
             <div class="script-text">
-                "Ahora vamos a ejecutar el programa para mostrar que funciona. Primero compilamos con javac y luego ejecutamos con java."
+                "Ahora vamos a explicar por qué elegimos esta solución y qué decisiones tomamos durante el desarrollo."
             </div>
 
-            <h3>Pasos a mostrar en consola:</h3>
-            <ol class="steps">
-                <li><strong>Registrar un libro:</strong> mostrar que pide código, nombre, precio, stock, categoría, autor y editorial.</li>
-                <li><strong>Registrar un uniforme:</strong> mostrar que pide código, nombre, precio, stock, categoría, talla y color.</li>
-                <li><strong>Intentar registrar un código repetido:</strong> explicar que el programa usa el HashSet para detectar que el código ya existe y no deja registrarlo.</li>
-                <li><strong>Listar productos:</strong> mostrar que aparecen los dos productos con su información y su precio final con descuento.</li>
-                <li><strong>Buscar por código:</strong> ingresar un código existente y mostrar que lo encuentra.</li>
-                <li><strong>Buscar por nombre:</strong> ingresar parte del nombre y mostrar las coincidencias.</li>
-                <li><strong>Ordenar por precio:</strong> mostrar la lista ordenada de menor a mayor.</li>
-                <li><strong>Salir:</strong> cerrar el programa.</li>
-            </ol>
+            <h3>Decisiones principales:</h3>
+            <ul class="decision-list">
+                <li><strong>Clase abstracta <span class="highlight">Producto</span>:</strong> la usamos para evitar crear objetos genéricos y para obligar a las clases hijas a implementar su propio cálculo de precio final.</li>
+                <li><strong>Interfaz <span class="highlight">Descuentable</span>:</strong> la creamos porque aplicar descuento es un comportamiento que podría tener cualquier producto, pero cada uno lo implementa a su manera.</li>
+                <li><strong><span class="highlight">ArrayList</span> + <span class="highlight">HashSet</span>:</strong> combinamos ambas colecciones porque el ArrayList nos permite almacenar y ordenar, mientras que el HashSet garantiza que los códigos sean únicos.</li>
+                <li><strong>Búsqueda por nombre normalizada:</strong> decidimos eliminar tildes para que el usuario pueda buscar sin preocuparse por las mayúsculas o acentos.</li>
+                <li><strong>Menú por consola:</strong> elegimos consola porque es lo que hemos practicado en clase y permite cumplir todos los requerimientos de forma clara.</li>
+            </ul>
 
             <h3>Cierre común:</h3>
             <div class="script-text">
-                "Elegimos esta estructura porque cumple con todos los requerimientos de la evaluación: clase abstracta, herencia, interfaz, sobrescritura de métodos, colecciones genéricas, búsqueda, ordenamiento y control de unicidad. Gracias por ver el video."
+                "Esta estructura cumple con todos los requerimientos de la evaluación: clase abstracta, herencia, interfaz, sobrescritura de métodos, colecciones genéricas, búsqueda, ordenamiento y control de unicidad. Nos pareció la forma más clara y organizada de resolver el caso. Gracias por ver el video."
             </div>
         </div>
 
@@ -289,8 +314,8 @@
                 <li>Pueden tener este documento abierto en otra pantalla mientras graban.</li>
                 <li>Lo más importante es que se vean las caras y se escuchen bien.</li>
                 <li>Si alguien se equivoca, no pasa nada, pueden seguir o repetir la parte.</li>
-                <li>Muestren bien la consola cuando ejecuten el programa.</li>
                 <li>En la Parte 1 y Parte 2 se recomienda compartir pantalla con el código mientras se explica.</li>
+                <li>En la Parte 3 pueden mostrar el diagrama de clases o el código de las decisiones que mencionan.</li>
             </ul>
         </div>
 
