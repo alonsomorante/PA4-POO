@@ -1,0 +1,15 @@
+# Archivos compilados
+out/
+*.class
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de prueba temporales
+test_input*.txt
